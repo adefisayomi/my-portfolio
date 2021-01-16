@@ -24,8 +24,7 @@ const Contact = () => {
     const handleSubmit = async (e) => {
         e.preventDefault()
         setSubmiting(true)
-         const url = (process.env.NODE_ENV).toLowerCase() === 'development' ? 'http://localhost:3000/api/mail' : 'https://devby-clace.com/api/mail'
-        console.log(url)
+         const url = (process.env.NODE_ENV).toLowerCase() === 'development' ? 'http://localhost:3000/api/mail' : 'https://devbyclace.com/api/mail'
 
         const config = {
             method: 'POST',

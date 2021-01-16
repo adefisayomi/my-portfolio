@@ -1,0 +1,90 @@
+/* mobile nav section --- */
+.mobile_nav, .mobile_nav_dropDown, .mobile_footer{
+    display: none;
+  }
+  @media screen and (max-width: 750px){
+    .mobile_nav{
+      display: flex;
+      align-items: center;
+      width: 100%;
+      max-height: 60px;
+      padding: 20px;
+      background-color: black;
+      color: rgb(211, 211, 211);
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 2;
+    }
+    .mobile_nav > span{
+      display: flex;
+      align-items: center;
+      width: 100%;
+    }
+    .mobile_nav span h1 {
+      margin: 0;
+      font-size: 18px;
+      font-weight: 700;
+      margin-left: 10px;
+    }
+    .mobile_nav_dropDown{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      padding: 30px 20px;
+      height: 400px;
+      background-color: rgba(0, 0, 0, 0.979);
+      transition: 0.4s;
+      position: fixed;
+      top: 60px;
+      border-top: 1px solid rgb(0, 102, 255);
+      left: 0;
+      z-index: 1;
+    }
+    .mobile_nav_dropDown ul{
+        flex-direction: column;
+        width: 100%;
+    }
+    .mobile_nav_dropDown ul li {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px;
+        text-transform: uppercase;
+        border-bottom: 0.02em solid rgb(46, 46, 46);
+        color: rgb(102, 102, 102);
+        font-weight: 500;
+        font-size: 13px;
+        cursor: pointer;
+      }
+      .mobile_nav_dropDown ul li:hover {
+        color: rgb(36, 126, 243);
+      }
+      /* mobile footer section --- */
+  .mobile_footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    border-top: 1px solid rgb(0, 102, 255);
+    background-color: black;
+    padding: 20px;
+  }
+  .mobile_footer p {
+    color: rgb(180, 179, 179);
+    text-align: center;
+    padding-top: 25px;
+    font-size: 13px;
+  }
+  .mobile_footer li {
+    color: rgb(97, 96, 96);
+    margin: 0 15px;
+    font-size: 13px;
+  }
+  .mobile_footer li:hover {
+    color: rgb(8, 72, 167);
+  }
+  }
+
+  

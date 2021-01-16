@@ -1,12 +1,10 @@
 import nc from 'next-connect'
 
-const proid = nc();
+const ProId = nc();
 
-proid.get((req, res) => {
-    res.send('id ')
+ProId.get((req, res) => {
+
+    res.send('Projects')
 })
 
-
-
-export default proid
-
+export default ProId

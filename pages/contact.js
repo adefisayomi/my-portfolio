@@ -24,8 +24,8 @@ const Contact = () => {
     const handleSubmit = async (e) => {
         e.preventDefault()
         setSubmiting(true)
-        // const url = (process.env.NODE_ENV).toLowerCase() === 'development' ? 'http://localhost:3000/api/sendmail' : 'https://devby-clace.herokuapp.com/api/sendmail'
-        const url = 'http://localhost:3000/api/mail'
+         const url = (process.env.NODE_ENV).toLowerCase() === 'development' ? 'http://localhost:3000/api/mail' : 'https://devby-clace.com/api/mail'
+        console.log(url)
 
         const config = {
             method: 'POST',

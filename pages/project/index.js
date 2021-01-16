@@ -6,8 +6,8 @@ import LoadingPage from '../../src/layout/loadingPage'
 
 
 const Projects = () => {
-    const url = (process.env.NODE_ENV).toLowerCase() === 'development' ? 'http://localhost:5000/api/projects' : 'https://devby-clace.herokuapp.com/api/projects'
-    console.log(url)
+    const url = (process.env.NODE_ENV).toLowerCase() === 'development' ? 'http://localhost:5000/api/project' : 'https://devbyclace.com/api/project'
+    
     const {data, error, isValidating} = useSwr(url, fetcher)
 
     return(

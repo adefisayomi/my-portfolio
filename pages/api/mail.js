@@ -22,7 +22,7 @@ mail.post( async(req, res) => {
             const Transporter = await NodeMailer.createTransport({
                 host: 'smtp.gmail.com',
                 auth: {
-                    user: 'devbyclace@gmail.com',
+                    user: 'claceey@gmail.com',
                     pass: 'expand101SURE'
                 }})
             Transporter.sendMail({

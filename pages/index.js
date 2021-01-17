@@ -1,16 +1,13 @@
-import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 
-export default function Home() {
+const Home = () => {
   return (
-    <div className={styles.container}>
-      <Head>
-        <title>Devby-clace | Home</title>
-        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"/>
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"/>
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"/>
-        <link rel="manifest" href="/site.webmanifest"/>
-      </Head>
+    <div className={styles.home}>
+      <div className= {styles.home_welcome}>
+        <h1>Full-stack web developer.</h1>
+        </div>
     </div>
   )
 }
+
+export default Home

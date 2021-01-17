@@ -6,18 +6,18 @@
     height: 100%;
     min-height: 90vh;
     padding: 20px;
-    font-family: 'Roboto';
+    overflow: hidden;
 }
 .appWrapper main {
     width: 100%;
     height: 100%;
     margin-left: 20px;
+    margin-left: 315px;
 }
 .appWrapper aside {
-    position: sticky;
+    position: fixed;
     top: 2.5vh;
     bottom: 2.5vh;
-    margin-left: 20px;
     width: 300px;
     min-width: 300px;
     height: 95vh;
@@ -25,11 +25,7 @@
     background-color: black;
 }
 .appWrapper footer{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    padding-top: 30px;
+    display: none;
 }
 @media screen and (max-width: 750px){
   .appWrapper{
@@ -39,15 +35,23 @@
   }
   .appWrapper main {
     align-items: center;
-    margin-left: 0;
-    padding: 0 10px;
+    margin: 0;
+    padding: 0 5px;
   }
   .appWrapper aside{
+    position: sticky;
     width: 100%;
     height: auto;
     top: 0;
     z-index: 10;
   }
+  .appWrapper footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding-top: 30px;
+}
 }
 
 /* nav section ----------- */

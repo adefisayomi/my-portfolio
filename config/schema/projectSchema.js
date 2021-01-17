@@ -7,7 +7,7 @@ const projectSchema = new mongoose.Schema({
     image: String,
     date: {
         type: String,
-        default: new Date().toUTCString()
+        default: new Date().toDateString()
     }
 })
 

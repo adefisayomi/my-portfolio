@@ -4,6 +4,7 @@ import styles from './../styles/contact.module.css'
 import {GlobalState} from './../src/contexts/stateprovider'
 import {useRouter} from 'next/router'
 import { v4 as uuid } from 'uuid';
+import emailJs from 'emailjs-com'
 
 
 const Contact = () => {
@@ -24,28 +25,40 @@ const Contact = () => {
     const handleSubmit = async (e) => {
         e.preventDefault()
         setSubmiting(true)
-         const url = (process.env.NODE_ENV).toLowerCase() === 'development' ? 'http://localhost:3000/api/mail' : 'https://devbyclace.com/api/mail'
+        const templateParams =  {'email': form.email,
+                                     'name': form.name,
+                                     'company': form.company,
+                                     'message': form.message,
+                                     'subject': form.subject,
+                                     'date': new Date().toDateString()
+                                    }
+        emailJs.send('service_9p7axjp', 'template_psjeoop', templateParams, "user_Ivx6RGDFZ8p3Q1emROZo0").then(response => {
+          console.log(response)
+      }, err => {
+          console.log({templateError: err})
+      })
+     //     const url = (process.env.NODE_ENV).toLowerCase() === 'development' ? 'http://localhost:3000/api/mail' : 'https://devbyclace.com/api/mail'
 
-        const config = {
-            method: 'POST',
-            body: JSON.stringify(form),
-            headers: {
-                'content-type': 'application/json'
-            }
-        }
-        const res = await fetch(url, config)
-        const data = await res.json()
-         if(data.success === false) {
-            setSubmiting(false)
-            setServerErr(data.message)
-         }
-         else {
-            setSubmiting(false)
-            setServerErr('')
-            setSuccess(true)
-            restForm()
-            setTimeout(() => router.push('/'), 3000 )
-         }
+     //    const config = {
+     //        method: 'POST',
+     //        body: JSON.stringify(form),
+     //        headers: {
+     //            'content-type': 'application/json'
+     //        }
+     //    }
+     //    const res = await fetch(url, config)
+     //    const data = await res.json()
+     //     if(data.success === false) {
+     //        setSubmiting(false)
+     //        setServerErr(data.message)
+     //     }
+     //     else {
+     //        setSubmiting(false)
+     //        setServerErr('')
+     //        setSuccess(true)
+     //        restForm()
+     //        setTimeout(() => router.push('/'), 3000 )
+     //     }
 
 
     }

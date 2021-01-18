@@ -17,13 +17,18 @@ project.get( async (req, res) => {
 })
 
 project.post(async (req, res) => {
-   const {title, details, link, image} = req.body
+   const {title, details, link, image, password} = req.body
 
    try{
-       if(!title, !details, !link, !image){
+       if(!title || !details || !link || !image || !password){
            res.status(200).json({success: false, message: 'All field are required.'})
            return
-       }else{
+       }
+       if(password != 'expand101SURE'){
+            res.status(404).json({success: false, message: 'Unauthorized'})
+            return
+       }
+       else{
            connection()
            const project = await new Project({title, details, link, image})
            const data = await project.save()

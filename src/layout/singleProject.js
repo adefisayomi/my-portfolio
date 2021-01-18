@@ -23,7 +23,8 @@ const SingleProject = ({open, details, title, openState, close, image, link}) =>
             <Modal.Content>{details}</Modal.Content>
             <Modal.Actions >
                 <Button content= 'Close' negative onClick= {close}/>
-                 <Button content= 'Live Preview' primary onClick= {() => router.replace(link)}/>
+                <a href= {link} target= '_blank'><Button content= 'Live Preview' primary onClick= {close}/></a>
+                 
             </Modal.Actions>
         </Modal>
 </div>

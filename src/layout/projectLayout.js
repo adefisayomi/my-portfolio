@@ -3,12 +3,15 @@ import { Button} from 'semantic-ui-react'
 import {GlobalState} from '../contexts/stateprovider'
 import SingleProject from './singleProject'
 import { useState } from 'react'
+import {useRouter} from 'next/router'
 import { useEffect } from 'react'
 
 
-const ProjectLayout = ({image, link, details, title, open, close, openState, date}) => {
+const ProjectLayout = ({image, details, title, date, id}) => {
 
     const {UI} = GlobalState()
+
+    const router = useRouter()
 
     return(
         <div className= {styles.projectLayout}>
@@ -20,20 +23,11 @@ const ProjectLayout = ({image, link, details, title, open, close, openState, dat
                 <p>{details.slice(0, 100)}...</p>
                 <Button
                     content= 'view'
-                    onClick={open}
+                    onClick={() => router.push(`/project/${id}`)}
                     color= {UI.btn}
                 />
                 <h4>{date}</h4>
             </span>
-                <SingleProject 
-                close= {close}
-                open= {open}
-                openState= {openState}
-                title= {title}
-                details= {details}
-                link= {link}
-                image= {image}
-            />
         </div>
     )
 }

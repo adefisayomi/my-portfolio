@@ -1,10 +1,7 @@
 import styles from './../../styles/project.module.css'
 import { Button} from 'semantic-ui-react'
 import {GlobalState} from '../contexts/stateprovider'
-import SingleProject from './singleProject'
-import { useState } from 'react'
 import {useRouter} from 'next/router'
-import { useEffect } from 'react'
 
 
 const ProjectLayout = ({image, details, title, date, id}) => {

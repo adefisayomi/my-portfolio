@@ -3,7 +3,6 @@ import useSwr from 'swr'
 import {Modal, Button, Loader, Segment, Dimmer, Image} from 'semantic-ui-react'
 import {useState} from 'react'
 import fetcher from '../../src/layout/fetcher'
-import LoadingPage from '../../src/layout/loadingPage'
 import {useRouter} from 'next/router'
 import Projects from './index'
 import { useEffect } from 'react'
@@ -11,7 +10,7 @@ import { useEffect } from 'react'
 
 const Project = () => {
     const router = useRouter()
-    const id = router.query.project
+    const id = router.query.project ? router.query.project : ''
 
     const url = (process.env.NODE_ENV).toLowerCase() === 'development' ? `http://localhost:3000/api/project/${id}` : `https://devbyclace.com/api/project/${project}`
     

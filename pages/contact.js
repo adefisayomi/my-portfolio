@@ -1,10 +1,11 @@
 import {Form, Button, Message} from 'semantic-ui-react'
-import { useState} from 'react'
+import { useState, useEffect} from 'react'
 import styles from './../styles/contact.module.css'
 import {GlobalState} from './../src/contexts/stateprovider'
 import {useRouter} from 'next/router'
 import { v4 as uuid } from 'uuid';
 import emailJs from 'emailjs-com'
+import EmailValidator from 'email-validator'
 
 
 const Contact = () => {
@@ -14,53 +15,43 @@ const Contact = () => {
     const {UI} = GlobalState()
 
     const [form, setForm] = useState({email: '', name: '', company: '', subject: '', message: ''})
-    const getForm = (e) => setForm({...form, [e.target.name]: e.target.value})
+    const getForm = (e) => setForm({...form, [e.target.name]: e.target.value}) 
     const restForm = () => setForm({email: '', name: '', company: '', subject: '', message: ''})
 
-    const [serverErr, setServerErr] = useState('')
+    const [err, setErr] = useState({isError: false, msg: ''})
     const [success, setSuccess] = useState(false)
     const [submiting, setSubmiting] = useState(false)
-    
 
     const handleSubmit = async (e) => {
         e.preventDefault()
-        setSubmiting(true)
-        const templateParams =  {'email': form.email,
-                                     'name': form.name,
-                                     'company': form.company,
-                                     'message': form.message,
-                                     'subject': form.subject,
-                                     'date': new Date().toDateString()
-                                    }
-        emailJs.send('service_9p7axjp', 'template_psjeoop', templateParams, "user_Ivx6RGDFZ8p3Q1emROZo0").then(response => {
-          console.log(response)
-      }, err => {
-          console.log({templateError: err})
-      })
-     //     const url = (process.env.NODE_ENV).toLowerCase() === 'development' ? 'http://localhost:3000/api/mail' : 'https://devbyclace.com/api/mail'
+        const validEmail = await EmailValidator.validate(form.email)
+          if(!form.email || !form.name || !form.company || !form.message || !form.subject){
+               setSubmiting(false)
+               return setErr({isError: true, msg: 'All fields are required.'})
+          }
+          if(!validEmail){
+               setSubmiting(false)
+               return setErr({isError: true, msg: 'Email is invalid.'})
+          }
+          else{
+               setSubmiting(true)
+               setErr({isError: false, msg: ''})
 
-     //    const config = {
-     //        method: 'POST',
-     //        body: JSON.stringify(form),
-     //        headers: {
-     //            'content-type': 'application/json'
-     //        }
-     //    }
-     //    const res = await fetch(url, config)
-     //    const data = await res.json()
-     //     if(data.success === false) {
-     //        setSubmiting(false)
-     //        setServerErr(data.message)
-     //     }
-     //     else {
-     //        setSubmiting(false)
-     //        setServerErr('')
-     //        setSuccess(true)
-     //        restForm()
-     //        setTimeout(() => router.push('/'), 3000 )
-     //     }
+               const templateParams = {
+                    'name': form.name, 'email': form.email, 'message': form.message,
+                    'subject': form.subject, 'company': form.company, 'date': new Date().toDateString()
+               }
+               emailJs.send('service_9p7axjp', 'template_psjeoop', templateParams, "user_Ivx6RGDFZ8p3Q1emROZo0").then(res => {
+                    setSuccess(true)
+                    setSubmiting(false)
+                    restForm()
+                    router.push('/')
+               }, err => {
+                    setSubmiting(false)
+                    setErr({isError: true, msg: 'Error sending message'})
+               })
 
-
+          }
     }
 
     return (
@@ -129,11 +120,11 @@ const Contact = () => {
                     loading= {submiting}
                     onClick= {handleSubmit}
                     />
-               {serverErr && <Message
+               {err.isError && <Message
                               negative
                               style = {{width: '100%', maxWidth: '600px'}}
                               header= 'Error'
-                              content= {serverErr}
+                              content= {err.msg}
                         />}
            </Form>
             </div>

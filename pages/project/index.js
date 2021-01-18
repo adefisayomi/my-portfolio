@@ -6,7 +6,7 @@ import fetcher from '../../src/layout/fetcher'
 import LoadingPage from '../../src/layout/loadingPage'
 
 
-const Projects = ({children}) => {
+const Project = ({children}) => {
 
     const url = (process.env.NODE_ENV).toLowerCase() === 'development' ? 'http://localhost:3000/api/project' : 'https://devbyclace.com/api/project'
     
@@ -38,4 +38,4 @@ const Projects = ({children}) => {
     )
 }
 
-export default Projects
+export default Project

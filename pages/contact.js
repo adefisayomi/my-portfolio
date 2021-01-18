@@ -45,7 +45,8 @@ const Contact = () => {
                     setSuccess(true)
                     setSubmiting(false)
                     restForm()
-                    router.push('/')
+                    setTimeout(() => router.push('/'), 3000)
+                    
                }, err => {
                     setSubmiting(false)
                     setErr({isError: true, msg: 'Error sending message'})

@@ -10,10 +10,10 @@ import { useEffect } from 'react'
 
 const Project = () => {
     const router = useRouter()
-    const id = router.query.para
-    //const id = router.query ? router.query.project : ''
 
-    const url = (process.env.NODE_ENV).toLowerCase() === 'development' ? `http://localhost:3000/api/project/${id}` : `https://devbyclace.com/api/project/${project}`
+    const id = router.query.project
+
+    const url = (process.env.NODE_ENV).toLowerCase() === 'development' ? `http://localhost:3000/api/project/${id}` : `https://devbyclace.com/api/project/${id}`
     
     const {data, error, isValidating} = useSwr(url, fetcher)
 

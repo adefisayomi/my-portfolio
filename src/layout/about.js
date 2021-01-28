@@ -15,7 +15,7 @@ const About = () => {
 
     return (
         <div className= {styles.about}>
-            <img src="https://images.pexels.com/photos/1212984/pexels-photo-1212984.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt=""/>
+            <img src="https://firebasestorage.googleapis.com/v0/b/devbyclace-portfolio-images.appspot.com/o/Adefisayomi2.jpg?alt=media&token=cb3da03d-4fcf-4f2e-a1db-283797be56e1" alt=""/>
             <div className= {styles.about_details}>
                 <h1>A little about me.</h1>
                 <p>I'm a full-stack web developer with a tech stack of Javascript, node.js, React js, Next.js, express, HTML, CSS, SCSS, mongoose && MongoDB.

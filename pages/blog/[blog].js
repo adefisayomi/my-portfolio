@@ -1,12 +1,12 @@
-// import styles from '../../styles/blog.module.css'
+import styles from '../../styles/blog.module.css'
 
-// const blog = () => {
+const Blog = () => {
 
-//     return (
-//         <div className= {styles.blog}>
-//             single blog
-//         </div>
-//     )
-// }
+    return (
+        <div className= {styles.blog}>
+            single blog
+        </div>
+    )
+}
 
-// export default blog
+export default Blog

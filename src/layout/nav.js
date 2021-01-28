@@ -24,8 +24,8 @@ const Nav = () => {
     return (
         <section className= {styles.nav}>
             <span>
-                <img src= 'https://thumbs.dreamstime.com/b/side-portrait-handsome-young-black-man-leaning-wall-outside-close-up-92169422.jpg' alt="Profile picture"/>
-                <h3>Adefisayomi</h3>
+                <img src= 'https://firebasestorage.googleapis.com/v0/b/devbyclace-portfolio-images.appspot.com/o/Adefisayomi2.jpg?alt=media&token=cb3da03d-4fcf-4f2e-a1db-283797be56e1' alt="Profile picture"/>
+                <h3>dolapo oluwole</h3>
                 <h4>FULL-STACK WEB DEVELOPER</h4>
             </span>
             

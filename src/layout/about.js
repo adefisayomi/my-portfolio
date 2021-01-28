@@ -18,7 +18,11 @@ const About = () => {
             <img src="https://images.pexels.com/photos/1212984/pexels-photo-1212984.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt=""/>
             <div className= {styles.about_details}>
                 <h1>A little about me.</h1>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aut omnis, necessitatibus, maiores maxime, placeat nostrum voluptates deleniti molestias atque aliquam impedit ullam officia cupiditate quia voluptatum. Eum corrupti officia animi ipsum quae. Dignissimos sit temporibus quas dolores? Molestias odio, numquam natus optio sapiente corporis soluta hic eaque, animi architecto distinctio </p>
+                <p>I'm a full-stack web developer with a tech stack of Javascript, node.js, React js, Next.js, express, HTML, CSS, SCSS, mongoose && MongoDB.
+I hail from and currently live in Nigeria, Lagos.
+I love reading, and learning new things especially things in the line of software development as I am currently learning python.
+I generally love engaging in challenging tasks that can improve my knowledge and that of the people around me.
+when I'm not coding I'm designing clothes. </p>
                 <ul>
                     <h4>reach me here.</h4>
                 {navs.map(nav => (

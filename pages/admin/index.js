@@ -1,10 +1,4 @@
-const Admin = () => {
-
-    return (
-        <div>
-            This is admin
-        </div>
-    )
+import Admin from '../../src/components/admin/admin'
+export default function admin () {
+    return <Admin />
 }
-
-export default Admin

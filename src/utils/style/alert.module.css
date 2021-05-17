@@ -1,0 +1,11 @@
+.alert {
+    display: flex;
+    width: 100%;
+    max-width: 400px;
+    position: fixed;
+    top: 15px;
+    left: 50%;
+    font-family: 'Roboto mono';
+    transform: translateX(-50%);
+    z-index: 2000;
+}

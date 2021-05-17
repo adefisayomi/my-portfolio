@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="4ae0c194-f428-4fc9-907e-6c351bea3688" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/_app.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/_app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/admin/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/api/blog/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/api/mail.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/api/project/[proid].js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/api/project/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/blog/[blog].js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/blog/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/contact.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/project/[project].js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/project/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/contexts/stateprovider.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/layout/about.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/layout/appwrapper.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/layout/blogLayout.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/layout/fetcher.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/layout/header.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/layout/loadingPage.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/layout/mobile-footer.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/layout/mobile-nav.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/layout/nav.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/layout/projectLayout.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/Home.module.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/about.module.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/blog.module.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/contact.module.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/globals.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/layout.module.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/mobile.module.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/project.module.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vercel.json" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1sRPfZB1IrFNAABYlazB3w6geiM" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="4ae0c194-f428-4fc9-907e-6c351bea3688" name="Default Changelist" comment="" />
+      <created>1620832551602</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1620832551602</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="495" y="258" key="com.intellij.ide.util.TipDialog" timestamp="1620833063046">
+      <screen x="0" y="0" width="1600" height="870" />
+    </state>
+    <state x="495" y="258" key="com.intellij.ide.util.TipDialog/0.0.1600.870@0.0.1600.870" timestamp="1620833063046" />
+  </component>
+</project>

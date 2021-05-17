@@ -1,0 +1,116 @@
+.blogs{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    max-height: 87vh;
+}
+.blogs_body {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+}
+.blogs_main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.blogs_aside {
+    position: sticky;
+    display: flex;
+    width: 100%;
+    max-width: 250px;
+    margin: 0 10px;
+    top: 50px;
+}
+.blogs_aside_notification{
+    width: 100%;
+    padding: 10px;
+}
+.blogs > header > h1 {
+    margin: 0;
+    padding: 0;
+    font-weight: 900;
+    font-size: 16px;
+    text-transform: capitalize;
+    font-family: 'Roboto mono';
+}
+@media screen and (max-width: 600px){
+    .blogs_aside{
+        display: none;
+    }
+    .blogs_main{
+        align-items: center;
+    }
+}
+/* Blog */
+.blog{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 400px;
+    border: 1px solid rgb(43, 42, 42);
+    padding: 10px 5px;
+    border-radius: 5px;
+    margin-bottom: 30px;
+}
+.blog_header {
+    display: flex;
+    width: 100%;
+    align-items: center;
+}
+.blog_header > span {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1;
+    padding-left: 10px;
+}
+.blog_header > span > h3 {
+    margin: 0;
+    padding: 0;
+    font-weight: 500;
+    font-size: 11.5px;
+    padding-bottom: 5px;
+    font-family: 'Roboto mono';
+}
+.blog_header > span > p {
+    margin: 0;
+    padding: 0;
+    font-weight: 500;
+    color: grey;
+    font-size: 10px;
+    font-family: 'Roboto';
+}
+.blog_header > img {
+    width: 35px;
+    height: 35px;
+    object-fit: cover;
+    border-radius: 100%;
+    border: 2px solid rgb(97, 95, 95);
+    padding: 2px;
+}
+
+/* blog body */
+.blog_body {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.blog_body > h2 {
+    margin: 0;
+    padding: 0;
+    font-weight: 700;
+    padding-bottom: 10px;
+    cursor: pointer;
+    width: fit-content;
+    font-size: 13px;
+    font-family: 'Roboto';
+    text-transform: capitalize;
+}
+.blog_body > p {
+    font-size: 11.5px;
+    color: grey;
+}
+.blog_body > p > a {
+    cursor: pointer;
+}

@@ -1,25 +1,24 @@
 import axios from 'axios'
-import Projects from '../../src/components/project/project'
+import useSWR from 'swr'
+import Projects from '../../src/components/project/projects'
 
 
-export async function getStaticProps (ctx) {
-
-    try {
-        const res = await axios.get('/projects')
-        if(res && !res.data.success) throw new Error(res.data.message)
-        return {
-            props: {
-                data: res.data.data
-            },
-            revalidate: 1
-        }
+export async function getStaticProps() {
+    const res = await axios.get('/projects')
+    if(res && res.data && res.data.success) {
+       const data = res.data.data
+       return {
+           props: {data}
+       }
     }
-    catch(err) {
-        return ({})
+    else {
+        return {}
     }
-}
-
+  }
 
 export default function projects ({data}) {
-    return <Projects data= {data} />
+
+    // const {data} = useSWR('/projects', {initialData: []})
+
+    return <Projects projects= {data} />
 }

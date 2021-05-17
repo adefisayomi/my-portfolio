@@ -1,24 +1,27 @@
-import emailValidator from 'email-validator'
-import User from '../../config/schema/user'
-import dbConnect from '../../config/connection'
-import bcrypt from 'bcryptjs'
-dbConnect()
+import jwt from 'jsonwebtoken'
+import cookie from 'cookie'
 
 
 export default async function (req, res) {
-    res.send({username: 'dolapo', id: 12344})
-    // try{
-    //     const {username, password} = req.body
-    //     if(!username || !password || !emailValidator.validate(username)) throw new Error('Invalid request.')
-    //     // check username and password
-    //     const user = await User.findOne({email: username})
-    //     if(!user) throw new Error ('invalid request.')
-
-    //     const validPass = await bcrypt.compare(user.password)
-    //     if (!validPass) throw new Error ('Invalid request.')
-    //     res.send({success: true, message: 'Successfuly logged in', data: user})
-    // }
-    // catch(err) {
-    //     res.send({success: false, message: err.message, data: null})
-    // }
+    try{
+        const {username, password} = req.body
+        if(!username || !password ) throw new Error('Invalid request.')
+        // check username and password
+        if(username !== process.env.USERNAME && password !== process.env.PASSWORD) throw new Error('Invalid credentials.')
+        //    //create a token
+        const user = {
+            username,
+            _id: process.env.ID
+        }
+        const authToken = await jwt.sign(user, process.env.ACCESS_TOKEN, {expiresIn: '1h'})
+             //set http only cookie that expires in 30 minutes
+        res.setHeader('Set-Cookie', cookie.serialize('authToken', authToken, {
+        httpOnly: true,
+        maxAge: 60 * 60 // 1 hour
+        }));
+        res.json({success: true, message: null, data: user})
+    }
+    catch(err) {
+        res.json({success: false, message: err.message, data: null})
+    }
 }

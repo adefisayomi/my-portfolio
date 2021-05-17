@@ -1,0 +1,49 @@
+
+.project {
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+}
+.project > img {
+    width: 100%;
+    max-width: 200px;
+    height: 150px;
+    border: none;
+    object-fit: cover;
+}
+.project > div {
+    display: flex;
+    width: fit-content;
+    padding: 0 10px;
+    flex-direction: column;
+    align-self: flex-start;
+}
+.project > div > h1 {
+    margin: 0;
+    padding: 0;
+    padding-bottom: 5px;
+    font-family: 'Roboto mono';
+    font-weight: 900;
+    cursor: pointer;
+    font-size: 15px;
+    text-transform: capitalize;
+}
+.project > div > p {
+    margin: 0;
+    padding: 0;
+    color: grey;
+    font-family: 'Roboto mono';
+    font-weight: 500;
+    font-size: 11px;
+    text-transform: lowercase;
+}
+@media screen and (max-width: 450px) {
+.project {
+    flex-direction: column;
+}
+.project > img {
+    max-width: 100%;
+    height: 200px;
+    margin-bottom: 10px;
+}
+}

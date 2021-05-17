@@ -1,11 +1,15 @@
 import Project from '../../../config/schema/project'
 import dbConnect from '../../../config/connection'
+import Auth from '../../../config/middlewares/auth'
 dbConnect()
 
 
 export default async function (req, res) {
     try {
         if(req.method === 'POST') {
+            const validAccess = await Auth()    //valid request
+            if(!validAccess.success) throw new Error(validAccess.message)
+            // 
             const {link, title, description, image} = req.body
             if(!link || !title || !description) throw new Error ('Error with input.')
             const project = new Project({
@@ -21,6 +25,6 @@ export default async function (req, res) {
         }
     }
     catch(err) {
-        res.send({success: false, message: err.message, data: null})
+        res.json({success: false, message: err.message, data: null})
     }
 }

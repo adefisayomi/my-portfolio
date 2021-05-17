@@ -1,0 +1,27 @@
+.header {
+    width: 100%;
+    display: flex;
+    align-items: baseline;
+}
+.header > span {
+    justify-self: flex-end;
+    font-size: 11px;
+    font-weight: 500;
+}
+.header > a {
+    color: grey;
+    font-size: 12px;
+    font-weight: 500;
+    flex: 1 1;
+    cursor: pointer;
+}
+.header_link{
+    font-size: 17px;
+    color: rgb(5, 150, 5);
+}
+.header:hover  .header_link {
+    color: grey;
+}
+.header a:hover {
+    color: rgb(3, 156, 3);
+}

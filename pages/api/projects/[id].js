@@ -16,6 +16,7 @@ export default async function (req, res) {
         // }
         // 
         if(req.method === 'GET') {
+            
             const project = await Project.findOne({_id: req.query.id})
             if(project) throw new Error ('Project does not exist.')
             res.send({success: true, message: null, data: project})
